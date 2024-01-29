@@ -1,0 +1,238 @@
+\documentclass[9pt]{report}
+%\usepackage[utopia]{mathdesign} 
+
+\usepackage{amsmath,amsfonts,amsthm,amssymb,mathtools}
+%\usepackage{amsmath,amsthm,mathtools}
+%\usepackage{libertine}
+\input{preamble.tex}
+\usepackage[scr]{rsfso}
+
+
+\lstset{basicstyle=\ttfamily}
+%\usepackage[euler-digits]{eulervm}
+\usepackage{mathpazo}
+%usepackage{palatino}
+%usepackage{crimson}
+
+
+\title{\Huge{Interface PM }\\{IFT2015}\\{\textbf{Devoir 1}}}
+\author{\huge{Franz Girardin}}
+\date{\today}
+\lstset{inputencoding=utf8/latin1}
+
+
+
+
+
+
+            %%%%%%%%%%%%%%%%%  Sect.                          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{helvet}
+\titleformat{\chapter}
+  {\fontfamily{}\bfseries\huge} % format
+  {}                % label
+  {0pt}             % sep
+  {\color{myb}\huge}           % before-code
+
+
+
+\titleformat{\section}
+  {\normalfont\scshape}{\thesection}{1em}{}
+
+
+% Customizing the spacing for the chapter titles
+\titlespacing*{\chapter}{0pt}{0pt}{20pt}
+
+% Allow hfill in math environment
+\newcommand{\specialcell}[1]{\ifmeasuring@#1\else\omit$\displaystyle#1$\ignorespaces\fi}
+
+% Allow you to do the non implication (implication barred)
+\newcommand{\notimplies}{%
+  \mathrel{{\ooalign{\hidewidth$\not\phantom{=}$\hidewidth\cr$\implies$}}}}
+
+
+
+\DeclareRobustCommand{\looongrightarrow}{%
+  \DOTSB\relbar\joinrel\relbar\joinrel\relbar\joinrel\rightarrow
+}
+
+
+\DeclareMathOperator{\di}{d\!}
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
+
+\begin{document}
+\maketitle
+
+\pagebreak
+\tableofcontents
+\pagebreak
+
+
+\chapter{Scénario }
+  \vspace{-2em}
+\begin{multicols*}{2}
+  \small
+  \begin{Exercice}{(5 pts)}{}
+    Écrivez un \textbf{scénario}, c’est-à-dire une séquence d’actions sur 
+    la façon dont vous utiliseriez cette
+    interface
+  \end{Exercice}
+
+
+  \section{Persona}
+  \textbf{Zephyra} est une jeune ingénieure talentueuse de 23 ans, 
+  évoluant dans le monde dynamique du développement de jeux vidéo. 
+  Lors d'une conversation détendue avant une réunion d'équipe, 
+une de ses collègues lui parle \textit{d'un site Web} récemment découvert.
+
+  \textbf{Améthiste}, une femme accomplie aux portes de la retraite, 
+  occupe un rôle clé en tant que gestionnaire des ressources humaines. 
+  Zephyra, bien consciente de l'intérêt d'Améthiste pour la spiritualité, 
+  les pratiques tantriques, la découverte des chakras et l'astrologie, 
+  est elle-même attirée par ces sujets. Cependant, elle est initialement 
+  sceptique quant à l'utilité d'un site Web dédié, préférant les sources 
+  variées et interactives disponibles sur des plateformes telles que 
+  \texttt{TikTok}.
+
+  Soucieuse de tisser des liens amicaux avec sa supérieure et désireuse 
+  de combler le fossé générationnel entre elles, Zephyra décide de donner 
+  une chance à cette recommandation. À la fin de leur échange, elle exprime 
+  à Améthiste sa curiosité grandissante et s'engage à explorer le site 
+  pour partager ses impressions.
+
+
+  \section{Scénarios et cas d'utilisation} 
+
+  \paragraph{Visite initiale}
+  Lors de sa première visite, Zephyra est attirée par le 
+  \textit{design unique} du 
+  site et commence par explorer les différentes \textbf{sections}
+  présentées sur la page d'accueil. Elle s'intéresse particulièrement 
+  aux \textit{lectures gratuites} marquées par le texte 
+  \textcolor{red}{\texttt{FREE!}} et aux informations sur l'ascension, 
+  parcourant les titres et les images pour se faire une idée 
+  du contenu offert Elle constate rapidement la quantité impressionnante 
+  de sections et de liens cliquable et tente de comprendre 
+  la \textit{signification} de chacun d'eux.
+
+
+  \begin{figure}[H]
+    \begin{center}
+      \includegraphics[width=0.45\textwidth]{NavigationInitialeNavbar.png}
+    \end{center}
+  \end{figure}
+
+
+  \paragraph{Navigation}
+  Navigation : Zephyra utilise la barre de navigation pour explorer 
+  les différentes catégories du site. Elle clique sur des onglets et 
+  sous-menus, découvrant divers services et contenus. 
+  Elle passe du temps à examiner chaque section, essayant de 
+  comprendre la structure du site et la relation entre les différentes 
+  parties.
+
+  \paragraph{Recherche d'information}
+  Dans cette étape, 
+  Zephyra se concentre sur la collecte d'informations spécifiques. 
+  L'auteure du site, \textbf{Jami Lin}, semble avoir un système  
+  compréhensif pour l'épanouissement personnel et l'éveil spirituel. 
+  Le site comprend une grande quantité d'information liées à 
+  sa \textit{philosophie}. 
+  Zephyra clique donc sur des liens pour approfondir sa compréhension des 
+  services et  informations, 
+  lit des descriptions détaillées et regarde 
+  éventuellement des vidéos ou des images associées pour enrichir 
+  sa compréhension.
+
+  \columnbreak
+
+
+\begin{figure}[H]
+ \dirtree{%
+.1 Barre de Navigation.
+.2 E-Learn.
+.3 \entouree{\{ sous-options \}}.
+.4 Law of attaction.
+.5 \entoure{\{ liens \}}.
+.6 \textit{Why doesn't 'Law of Attraction work' }. 
+.6 \textit{Click Here ... Manifestation Mastery E-learn}.
+.4 What is Galactic for.
+.5 \entoure{\{ liens \}}.
+.6 \textit{Why doesn't 'Law of Attraction work' }.
+.4 $\dots$. 
+.4 FREE! Treasure Chest.  
+.5 \entoure{\{ liens \}}.
+.6 \textit{Why doesn't 'Law of Attraction work' }.
+.2 SIGN-UP.
+.3 SIGN-IN. 
+.4 Username.
+.4 Password. 
+.3 \entoure{\{ liens \}}.
+.4 Forgot Password.
+.4 \textit{Join Jami Live On E-Lean}.   
+.2 TODAY's. 
+.3 $\dots$.
+.2 ACTIVATE.
+.3 $\dots$.
+.2 EVOLVE. 
+.3 $\dots$.
+.2 MASTER. 
+.3 $\dots$.
+.2 5D. 
+.3 $\dots$.
+.2 GUIDES. 
+.3 $\dots$.
+.2 STORE. 
+.3 $\dots$.
+} 
+\caption{Aperçu de la barre de navigation}
+\end{figure}
+
+
+\begin{note}{}{}
+    Chaque \textbf{onglet} de la barre de navigation comprends 
+    au moins 4 \texttt{sous-options} organisées dans une menu défilant.   
+\end{note}
+
+  \paragraph{Inscription}
+  Zephyra décide de s'inscrire pour accéder à plus de contenus. Elle 
+  remplit le formulaire d'inscription, fournissant ses informations
+  personnelles et créant un compte utilisateur. Elle prend le temps de 
+  lire les termes et conditions et complète le processus d'inscription.
+
+
+
+  \paragraph{Exploration du contenu personalité}
+  Une fois inscrite, Zephyra explore les fonctionnalités personnalisées. 
+  Elle navigue à travers les options disponibles pour 
+  les utilisateurs enregistrés, découvrant des lectures personnalisées, 
+  des activations et d'autres contenus exclusifs. Elle teste différentes 
+  fonctionnalités pour voir comment elles répondent à ses intérêts.
+
+
+  \paragraph{Recherche de support et contact}
+  Zephyra cherche des informations supplémentaires ou de l'aide sur 
+  l'utilisation du site. Elle navigue vers la section d'aide ou de 
+  contact, où elle recherche des FAQ, des guides d'utilisation, ou 
+  un moyen de contacter directement le support client ou l'auteur Jami Lin, 
+  puisqu'il est mentionné plusieurs fois qu'il est possible de la 
+  contacter directement par courriel. 
+
+
+
+  
+
+
+
+
+  \vspace{-1em}
+
+
+
+
+
+
+
+
+
+\end{multicols*}
+\end{document}
