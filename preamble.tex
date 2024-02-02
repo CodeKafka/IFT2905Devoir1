@@ -276,13 +276,13 @@ picture]{%
 % using titletoc we redefine the ToC entries for parts, chapters, sections, and subsections
 \titlecontents{part}
   [0em]{\centering}
-  {\contentslabel}
+  {\textsc\contentslabel}
   {}{}
 \titlecontents{chapter}
   [0em]{\vspace*{2\baselineskip}}
   {\parbox{4.5em}{%
     \hfill\Huge\rmfamily\bfseries\color{myred}\thecontentspage}%
-   \vspace*{-2.3\baselineskip}\leftbar\textsc{\small Section~\thecontentslabel}\\\rmfamily}
+   \vspace*{-2.3\baselineskip}\leftbar\textsc{\small\bfseries Section~\thecontentslabel}\\\rmfamily}
   {}{\endleftbar}
 \titlecontents{section}
   [8.4em]
