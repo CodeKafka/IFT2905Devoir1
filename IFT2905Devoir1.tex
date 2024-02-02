@@ -3,15 +3,21 @@
 
 \usepackage{amsmath,amsfonts,amsthm,amssymb,mathtools}
 %\usepackage{amsmath,amsthm,mathtools}
-%\usepackage{libertine}
+\usepackage{libertine}
 \input{preamble.tex}
 \usepackage[scr]{rsfso}
+
+\usepackage{titlesec}
+\usepackage{microtype}
+
+
+\definecolor{myblue}{RGB}{0,82,155}
 
 
 \lstset{basicstyle=\ttfamily}
 %\usepackage[euler-digits]{eulervm}
-\usepackage{mathpazo}
-%usepackage{palatino}
+%\usepackage{mathpazo}
+%\usepackage{palatino}
 %usepackage{crimson}
 
 
@@ -26,14 +32,28 @@
 
 
             %%%%%%%%%%%%%%%%%  Sect.                          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{helvet}
-\titleformat{\chapter}
-  {\fontfamily{}\bfseries\huge} % format
-  {}                % label
-  {0pt}             % sep
-  {\color{myb}\huge}           % before-code
-
-
+%\usepackage{helvet}
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\color{myblue}}
+  {\filleft%
+    \begin{tikzpicture}
+    \node[
+      outer sep=0pt,
+      text width=1.5cm,
+      minimum height=2cm,
+      fill=myblue,
+      font=\color{white}\fontsize{40}{50}\selectfont,
+      align=center
+      ] (num) {\thechapter};
+    \node[
+      rotate=90,
+      anchor=south,
+      font=\color{black}\Large\normalfont
+      ] at ([xshift=-5pt]num.west) {\textls[180]{\textsc{Section}}};  
+    \end{tikzpicture}%
+  }
+  {5pt}
+  {\titlerule[2.0pt]\vskip3pt\titlerule\vskip4pt\LARGE\normalfont}
 
 \titleformat{\section}
   {\normalfont\scshape}{\thesection}{1em}{}
@@ -67,10 +87,173 @@
 \pagebreak
 
 
-\chapter{Scénario }
+\chapter{Scénario et présentation du site Web}
   \vspace{-2em}
 \begin{multicols*}{2}
   \small
+
+
+  \begin{Exercice}{(5 pts)}{}
+  Choisissez un site Web qui contient au moins quatre écrans ou pages différents :     
+  \begin{itemize}
+    \item [$\rhd$ ] Formulaire d’inscription
+    \item [$\rhd$ ] Formulaire de connexion  
+    \item [$\rhd$ ] Page principale  
+    \item [$\rhd$ ] Écran de l'activité principale 
+  \end{itemize} 
+  \end{Exercice}
+
+
+  \section{Choix de site}
+  Nous avons choisis de critiquer le site de l'enchenteresse \textit{Jami Lin} 
+  qui offre des informations, des produits et des services visant à l'éveil 
+  spirituel. Nous avons fait ce choix car il s'agit sans doute de l'un des 
+  design les plus involontairement chaotiques et incohérents que l'on peut trouver 
+  sur l'internet. En considérant tous les membres du groupe, nous estimons 
+  que \textit{Jami Lin}  nous a collectivement fait perdre près de 5 ans d'espérance de vie, 
+  à cause du stress occasionné par la tâche fastidieuse d'avoir à appréhender la bouillie 
+  inintelligible qui lui fait office de site Web. 
+  \[ \big| \href{https://galacticspirit.com/home.php}{\text{ Lien vers le site }}  \big| \]
+
+  \vspace{-1em}
+
+  \section{Page d'inscription}
+  \vspace{-2em}
+  \begin{figure}[H]
+    \begin{center}
+      \includegraphics[width=0.45\textwidth]{SinupPage.png}
+    \end{center}
+  \end{figure}
+  \vspace{-2.5em}
+  La page d'inscription est diponible depuis la page principale sous l'onglet 
+  \texttt{SNGN-IN}. Or, pour s'inscrire, il faut en fait naviguer à travers plusieurs 
+  page pour finalement entrer ses informations personnelles. Nous discuterons 
+  des problèmes inhérent à cette approche dans notre critique
+
+
+%  \begin{figure}[H]
+%    \scriptsize{
+%   \dirtree{%
+%  .1 Barre de navigation $\mathbb{P}$ principale.
+%  .2 SIGN-IN.
+%  .3 Sélectionner Memberships SIGN-UP. 
+%  .4 $\mathbb{P}$ SIGN-UP avec offre de produits.
+%  .5 $\dots$ Trouver le lien \textcolor{myb}{Register and Enjoy!}.
+%  .6 Vrai page de SIGN-UP.
+%  }}
+%  \end{figure}
+
+  \section{Page de connexion}
+  L'option de connexion est disponible sur la page principale; \textbf{il n'y a pas}  
+  de page uniquement consacrée à la connexion. Il faut donc 
+  appuyer sur l'onglet SIGN-IN pour entrer ses informations personnelles 
+  de compe. 
+  \vspace{-2em}
+
+  \section{Page Principale}
+  \vspace{-2em}
+    \begin{figure}[H]
+    \scriptsize{
+     \dirtree{%
+    .1 Barre de Navigation.
+    .2 E-Learn.
+    .3 \entouree{\{ sous-options \}}.
+    .4 Law of attaction.
+    .5 \entoure{\{ liens \}}.
+    .6 \textit{Why doesn't 'Law of Attraction work' }. 
+    .6 \textit{Click Here ... Manifestation Mastery E-learn}.
+    .4 What is Galactic for.
+    .5 \entoure{\{ liens \}}.
+    .6 \textit{Why doesn't 'Law of Attraction work' }.
+    .4 $\dots$. 
+    .4 FREE! Treasure Chest.  
+    .5 \entoure{\{ liens \}}.
+    .6 \textit{Why doesn't 'Law of Attraction work' }.
+    .2 SIGN-UP.
+    .3 SIGN-IN. 
+    .4 Username.
+    .4 Password. 
+    .3 \entoure{\{ liens \}}.
+    .4 Forgot Password.
+    .4 \textit{Join Jami Live On E-Lean}.   
+    .2 TODAY's. 
+    .3 $\dots$.
+    .2 ACTIVATE.
+    .3 $\dots$.
+    .2 EVOLVE. 
+    .3 $\dots$.
+    .2 MASTER. 
+    .3 $\dots$.
+    .2 5D. 
+    .3 $\dots$.
+    .2 GUIDES. 
+    .3 $\dots$.
+    .2 STORE. 
+    .3 $\dots$.
+    }} 
+    \caption{Aperçu de la barre de navigation sur la $\mathbb{P}$ principale}
+    \end{figure}
+
+
+  \begin{note}{}{}
+      Chaque \textbf{onglet} de la barre de navigation comprends 
+      au moins 4 \texttt{sous-options} organisées dans une menu défilant.   
+  \end{note}
+
+
+  \section{Page d'activité principale}
+  L'organisation du site est trop granulaire pour qu'on puisse identifier 
+  une unique \textit{page d'activité principale}. En effet, la quantité 
+  oppressante de pages, d'onglets et de liens cliquables nous laissent 
+  croire qu'aucune des pages ne constitue un page d'activité principale. 
+  La navigation est volatile; il faut cliquer ici et là, découvrir ceci et 
+  cela. 
+
+  En étant plus cynique, on constate que ce choix de design et probablement 
+  volontaire. L'idée serait de captiver l'attention  de l'usager le plus 
+  longtemps possible, alors qui navigue sur toutes les pages 
+  et est redigiré à travers tous les liens en esseyant de comprendre 
+  quelles options lui sont offertes. 
+  
+  De plus, chaque page contient un ou plusieurs éléments qui suggèrent 
+  qu'on s'inscrive à un service ou achète un produit. Ainsi, le site 
+  est essientiellemennt un \textit{grift} : une plateforme feignant 
+  d'informer le lecteurs sur des pratiques ésothériques et spirituelles 
+  \textbf{dans le but ultime de lui faire acheter un produit}.
+  
+  En considérant ces éléments, nous concluons alors que la 
+  \textit{page d'activité principale} est en fait la page de magasinage 
+  (STORE) disponible à partir de la page principage.
+
+  \begin{note}{}{}
+    La magasin (STORE) est \textbf{divisé en 7 pages} chacune ayant une thématique 
+    différente et une panoplies de produits et services. 
+  \end{note}
+
+
+    \begin{figure}[H]
+    \scriptsize{
+     \dirtree{%
+    .1 Barre de Navigation.
+    .2 STORE.
+    .3 \entouree{\{ sous-options \}}.
+    .4 \textcolor{myb}{Save-Money Bundle (Tools)}. 
+    .5 \entoure{\{ liens \}}.
+    .6 \textit{Galactic Store}. 
+    .6 \textit{Galactic Compass}. 
+    .6 \textit{Meditation \& Chakra Crystals}. 
+    .4 \textcolor{myb}{Infinity Compass}.  
+    .5 \entoure{\{ liens \}}.
+    .6 \textit{Explore a LifeTime of DAILY Evolutions}.
+    .6 \textit{Click Here to Get Your Compass}.
+    .4 $\dots$ \textbf{(Quatre autres options)}  . 
+    .4 \textcolor{myb}{E-Learn \& Manifest}.     
+    .5 \entoure{\{ liens \}}.
+    .6 \textit{Click Here to Get Your Manifestation Mastery E-learn}.
+    .6 \textit{Why doesn't 'Law of Attraction work' }.
+    }}
+    \end{figure}
+
   \begin{Exercice}{(5 pts)}{}
     Écrivez un \textbf{scénario}, c’est-à-dire une séquence d’actions sur 
     la façon dont vous utiliseriez cette
@@ -115,11 +298,11 @@ une de ses collègues lui parle \textit{d'un site Web} récemment découvert.
   la \textit{signification} de chacun d'eux.
 
 
-  \begin{figure}[H]
-    \begin{center}
-      \includegraphics[width=0.45\textwidth]{NavigationInitialeNavbar.png}
-    \end{center}
-  \end{figure}
+%  \begin{figure}[H]
+%    \begin{center}
+%      \includegraphics[width=0.45\textwidth]{NavigationInitialeNavbar.png}
+%    \end{center}
+%  \end{figure}
 
 
   \paragraph{Navigation}
@@ -143,55 +326,8 @@ une de ses collègues lui parle \textit{d'un site Web} récemment découvert.
   éventuellement des vidéos ou des images associées pour enrichir 
   sa compréhension.
 
-  \columnbreak
 
 
-\begin{figure}[H]
- \dirtree{%
-.1 Barre de Navigation.
-.2 E-Learn.
-.3 \entouree{\{ sous-options \}}.
-.4 Law of attaction.
-.5 \entoure{\{ liens \}}.
-.6 \textit{Why doesn't 'Law of Attraction work' }. 
-.6 \textit{Click Here ... Manifestation Mastery E-learn}.
-.4 What is Galactic for.
-.5 \entoure{\{ liens \}}.
-.6 \textit{Why doesn't 'Law of Attraction work' }.
-.4 $\dots$. 
-.4 FREE! Treasure Chest.  
-.5 \entoure{\{ liens \}}.
-.6 \textit{Why doesn't 'Law of Attraction work' }.
-.2 SIGN-UP.
-.3 SIGN-IN. 
-.4 Username.
-.4 Password. 
-.3 \entoure{\{ liens \}}.
-.4 Forgot Password.
-.4 \textit{Join Jami Live On E-Lean}.   
-.2 TODAY's. 
-.3 $\dots$.
-.2 ACTIVATE.
-.3 $\dots$.
-.2 EVOLVE. 
-.3 $\dots$.
-.2 MASTER. 
-.3 $\dots$.
-.2 5D. 
-.3 $\dots$.
-.2 GUIDES. 
-.3 $\dots$.
-.2 STORE. 
-.3 $\dots$.
-} 
-\caption{Aperçu de la barre de navigation}
-\end{figure}
-
-
-\begin{note}{}{}
-    Chaque \textbf{onglet} de la barre de navigation comprends 
-    au moins 4 \texttt{sous-options} organisées dans une menu défilant.   
-\end{note}
 
   \paragraph{Inscription}
   Zephyra décide de s'inscrire pour accéder à plus de contenus. Elle 
