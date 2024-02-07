@@ -3,7 +3,6 @@
 
 \usepackage{amsmath,amsfonts,amsthm,amssymb,mathtools}
 %\usepackage{amsmath,amsthm,mathtools}
-\usepackage{libertine}
 \input{preamble.tex}
 \usepackage[scr]{rsfso}
 
@@ -17,9 +16,18 @@
 
 \lstset{basicstyle=\ttfamily}
 %\usepackage[euler-digits]{eulervm}
-%\usepackage{mathpazo}
+\usepackage{mathpazo}
 %\usepackage{palatino}
 %usepackage{crimson}
+\usepackage{libertine}
+
+
+% Save the original definition of the mathpazo typewriter font
+\newcommand{\mathpazott}{\fontfamily{pplj}\selectfont}
+
+% Patch the \texttt command to use the mathpazo typewriter font
+\let\oldtexttt\texttt
+\renewcommand{\texttt}[1]{{\scriptsize\mathpazott #1}}
 
 
 %\title{\Huge{Interface PM }\\{IFT2015}\\{\textbf{Devoir 1}}}
@@ -115,7 +123,11 @@
 		\begin{flushleft}
 			\large
 			\textit{Auteur}\\
-		Franz \textsc{Girardin} % Your name
+		Franz \textsc{Girardin} \\ % Your name
+		Nourdin \textsc{Azami} \\ 
+    Emmanuel F. Gérald \textsc{Paraison} \\ % Your name
+  	Martin \textsc{Medina} \\
+    Étienne \textsc{Mitchell-Bouch}
 		\end{flushleft}
 	\end{minipage}
 	~
@@ -123,7 +135,11 @@
 		\begin{flushright}
 			\large
 			\textit{Matricule}\\
-			\textsc{20078678} % Supervisor's name
+			\textsc{20078678} \\ % Supervisor's name
+			\textsc{20202901} \\ 
+      \textsc{20189461} \\% Supervisor's name
+      \textsc{20235219} \\ 
+      \textsc{20243430}
 		\end{flushright}
 	\end{minipage}
 	
@@ -177,7 +193,7 @@
   Nous avons choisis de critiquer le site de l'enchenteresse \textit{Jami Lin} 
   qui offre des informations, des produits et des services visant à l'éveil 
   spirituel. Nous avons fait ce choix car il s'agit sans doute de l'un des 
-  design les plus involontairement chaotiques et incohérents que l'on peut trouver 
+  designs les plus involontairement chaotiques et incohérents que l'on peut trouver 
   sur l'internet. En considérant tous les membres du groupe, nous estimons 
   que \textit{Jami Lin}  nous a collectivement fait perdre près de 5 ans d'espérance de vie, 
   à cause du stress occasionné par la tâche fastidieuse d'avoir à appréhender la bouillie 
@@ -196,7 +212,7 @@
   \vspace{-2.5em}
   La page d'inscription est diponible depuis la page principale sous l'onglet 
   \texttt{SNGN-IN}. Or, pour s'inscrire, il faut en fait naviguer à travers plusieurs 
-  page pour finalement entrer ses informations personnelles. Nous discuterons 
+  pages pour finalement entrer ses informations personnelles. Nous discuterons 
   des problèmes inhérent à cette approche dans notre critique
 
 
@@ -216,7 +232,7 @@
   L'option de connexion est disponible sur la page principale; \textbf{il n'y a pas}  
   de page uniquement consacrée à la connexion. Il faut donc 
   appuyer sur l'onglet SIGN-IN pour entrer ses informations personnelles 
-  de compe. 
+  de compte. 
   \vspace{-2em}
 
   \section{Page Principale}
@@ -265,7 +281,7 @@
 
 
   \begin{note}{}{}
-      Chaque \textbf{onglet} de la barre de navigation comprends 
+      Chaque \textbf{onglet} de la barre de navigation comprend 
       au moins 4 \texttt{sous-options} organisées dans une menu défilant.   
   \end{note}
 
@@ -280,14 +296,14 @@
 
   En étant plus cynique, on constate que ce choix de design et probablement 
   volontaire. L'idée serait de captiver l'attention  de l'usager le plus 
-  longtemps possible, alors qui navigue sur toutes les pages 
+  longtemps possible, alors qu'il navigue sur toutes les pages 
   et est redigiré à travers tous les liens en esseyant de comprendre 
   quelles options lui sont offertes. 
   
   De plus, chaque page contient un ou plusieurs éléments qui suggèrent 
   qu'on s'inscrive à un service ou achète un produit. Ainsi, le site 
-  est essientiellemennt un \textit{grift} : une plateforme feignant 
-  d'informer le lecteurs sur des pratiques ésothériques et spirituelles 
+  est essentiellemennt un \textit{grift} : une plateforme feignant 
+  d'informer le lecteur sur des pratiques ésothériques et spirituelles 
   \textbf{dans le but ultime de lui faire acheter un produit}.
   
   En considérant ces éléments, nous concluons alors que la 
@@ -430,6 +446,206 @@ une de ses collègues lui parle \textit{d'un site Web} récemment découvert.
   \end{Exercice}
 
   \section{Problèmes fondamentaux}
+
+  \subsection{Clarté et raison d'être} 
+  Un problème majeur du site de \textit{Jami Lin} est le manque de clarté concernant sa 
+  raison d'être, ce qui impacte directement les principes d'utilisabilité tels que 
+  \textbf{l'utilité} et la compréhension par l'utilisateur. Pour un nouveau visiteur, 
+  comprendre l'objectif du site - s'il s'agit d'un blog, d'une plateforme de 
+  services électroniques, d'un site communautaire pour les passionnés de spiritualité,
+  ou d'une boutique de cristaux - est complexe. Cela viole plusieurs heuristiques 
+  de conception d'interface. En effet, l'ambiguité quant à la raison d'être 
+  contribue au manque de 
+  \textbf{visibilité de l'état du système}, puisque le site ne communique pas 
+  clairement son objectif ou ses fonctionnalités principales dès l'entrée sur 
+  la page d'acceuil. 
+  Il y a également un manque de \textbf{correspondance}; le site ne parvient pas 
+  à utiliser un langage ou des conventions qui seraient familiers et compréhensibles 
+  par un utilisateur moyen. En effet, à cause du langage ésothérique 
+  qu'utilise l'auteure, on a du mal à décrypter pourquoi la plateforme existe 
+  et qu'est-ce qu'elle peut offrir. Il faut donc plusieurs visites 
+  ou une navigation prolongée pour se familiariser avec le jargon utilisé. Ce défaut 
+  touche également au principe de \textbf{reconnaissance et rappel}. En l'occurence, 
+  les uttilisateurs doivent parcourir le site pour assembler des informations 
+  disparates \textit{afin de comprendre son but}, plutôt que de reconnaître
+  ledit but instantanément. Ainsi, le  site rend pas sa \textit{raison d'être} immédiatement 
+  claire et cette confusion initiale pourrait entraver l'engagement de 
+  l'utilisateur et diminuer la satisfaction globale, affectant ainsi l'expérience 
+  utilisateur (UX) dans son ensemble.
+  
+  \begin{itemize}
+    \item [$\rhd$ ] \textbf{Défaut de clarté et raison d'être du site Web}  
+      \begin{itemize}
+        \item [$\blacktriangleright$ ] $\mathbb{C}$ompréehnsion du fonctionnement  
+        \item [$\blacktriangleright$ ] $\mathbb{U}$tilié 
+        \item [$\blacktriangleright$ ] $\mathbb{V}$isibilité de l'état du syst.
+        \item [$\blacktriangleright$ ] $\mathbb{C}$orrespondance
+        \item [$\blacktriangleright$ ] $\mathbb{R}$econnaisance et rappel
+      \end{itemize}
+  \end{itemize}
+
+  \subsection{Navigation}
+  Le site souffre également de nombreux défaux de navigation. En effet, le site 
+  semble dépourvu d'une structure de navigation claire, ce qui affecte la 
+  capacité de l'utilisateur à trouver des information spécifiques. Parfois, 
+  mêmes les opérations les plus simples semblent inexplicablement difficiles 
+  à accomplir, à cause de la navigation confondante. À titre d'exemple, 
+  la seule façon de s'\textit{inscrire}   (\texttt{sign-up}) est de cliquer 
+  sur l'onglet de la barre de navigation de la page principale 
+  (  \href{https://galacticspirit.com/home.php}{\texttt{https://galacticspirit.com/home.php}})
+  qui porte le nom \texttt{sign-in}.  
+  Un menu défilant nous offre ensuite l'option d'inscription. Lorsqu'on 
+  clique sur \texttt{Memberships SIGN-UP}, on est rediigé sur la page 
+  \href{https://galacticspirit.com/members/signup.php}{\texttt{https://galacticspirit.com/members/signup.php}}. Sur cette nouvelle page, il faut repérer le lien 
+  \texttt{Register \& Enjoy!}. Ce lien nous mène à la page 
+  \href{https://galacticspirit.com/members/free_superpower.php}{\texttt{https://galacticspirit.com/members/free\_superpower.php}}. C'est finalement sur cette page 
+  qu'on peut entrer ses informations personnelles pour l'inscription. Cet exemple 
+  reflète un problème flagrant au niveau des \textbf{signifiants}. D'une part, on en 
+  vient à se demander : pourquoi faut-il cliquer sur un  buton 
+  \texttt{SIGN-IN} alors que notre objectif est de \texttt{SIGN-UP} ? 
+  D'autre part, on se questionne également quant 
+  à la motivation dernière l'idée de forcer le visiteur à naviguer à travers plusieurs 
+  pages pour s'inscrire. Finalement, on peine à comprendre pourquoi 
+  la \textit{fonctionnalités} d'inscription et de connexion ne possèdent pas 
+  leur propre page dédiée et n'est pas visible via un signifiant claire. Finalement, 
+  l'absence de \textbf{prévention d'erreur} est indicatif de la structure 
+  complexe et contre intuitive affectant la navigation. En effet, plusieurs 
+  affordances sont cachées, les signifiants sont contradictoires et les 
+  \textbf{correspondances} sont nébuleuses. 
+  Ces problèmes de navigation peuvent conduire à une expérience utilisateur frustrante, 
+  diminuant la probabilité de retour sur le site et affectant l'impression générale de 
+  l'utilisateur sur la plateforme.
+
+
+    \begin{itemize}
+    \item [$\rhd$ ] \textbf{Défauts de Navigation}  
+      \begin{itemize}
+        \item [$\blacktriangleright$ ] $\mathbb{A}$ffordances difficle d'accès 
+        \item [$\blacktriangleright$ ] $\mathbb{S}$ignifiants contradictoires
+        \item [$\blacktriangleright$ ] $\mathbb{P}$révention d'erreurs lacunaire
+        \item [$\blacktriangleright$ ] $\mathbb{C}$orrespondance nébuleuse
+      \end{itemize}
+  \end{itemize}
+
+  \section{Problèmes esthétiques}
+  \subsection{Présentation du contenu}
+  Sur l'entièreté du site, le présentation du contenu est 
+  inutilement dense. Et contrairement à certains média 
+  à travers lesquels la densité d'information est un choix délibéré 
+  (articles scientifiques, journaux, blogs techniques, etc.) cette décision 
+  de design ne remplit aucune \textbf{utilité}. Au contraire, elle 
+  end à confondre le lecteur, qui est alors submergé par l'excès d'information 
+  de choix et de liens cliquables. La \textbf{page principale} est particulièrement 
+  affectée par ce défaut. Sur celle-ci, on retrouve des images 
+  non pertientes; des liens vers les 
+  \textit{entraînement activation de droit de naissances};  
+  des liens vers les \textit{entraînements d'activation de chakra};
+  des liens vers les \textit{entraînement de création quantique}; 
+  des liens vers les \textit{entraînements de méditation}; des informations 
+  sur la \textit{création quantique}; une vidéo d'introduction 
+  à la philosophie \textit{Galactic Spirit} de \textit{Jami Lin}; 
+  des informations sur l'attraction magnétique, et plus encore. 
+  Ainsi, le site enfreint l'heuristique de 
+  \textbf{Design esthétique et minimaliste}, puisque l'utilisateur 
+  est confronté à un encombrement visuel qui nuit à la clarté. 
+  La façon dont le contenu est présenté nuit également 
+  à la \textbf{prévention des erreurs}, puisque la densité 
+  excessive d'nformation et de choix conduit à des erreurs de naviguation 
+  où, par exemple, l'utiliateur clique accidentellement sur des 
+  liens inappropriés. Finalement, le choix de design viole l'heuristique de 
+  \textbf{reconnaissance plutôt que rappel}. En effet, la surchage 
+  d'information rend difficile pour l'utilisateur de se rappeler 
+  où trouver des éléments spécifiques du site. 
+
+
+  \begin{itemize}
+    \item [$\rhd$ ] \textbf{Défauts de présentation du contenu}  
+      \begin{itemize}
+        \item [$\blacktriangleright$ ] $\mathbb{U}$tilié des différents éléments 
+        \item [$\blacktriangleright$ ] $\mathbb{D}$esign esthétique et minimaliste 
+        \item [$\blacktriangleright$ ] $\mathbb{P}$révention d'erreurs lacunaire
+        \item [$\blacktriangleright$ ] $\mathbb{R}$econnaisance et rappel
+      \end{itemize}
+  \end{itemize}
+  \vspace{-1em}
+
+
+  \subsection{Choix esthétiques}
+  Plusieurs problèmes de ce site sont dus aux choix esthétiques. 
+  Par exemple, les images ne sont pas évocatives. Pour ceux qui ne sont pas 
+  initié à la philosophie de \textit{Jami Lin}, il est difficle de 
+  déterminer si chacun des images sur la \textbf{page principale} a un signification 
+  particulière ou si elles ont été choisies au hasard. Par exemple, 
+  les quatres images qui accompagnent les liens vers les pages 
+  \texttt{Evolve Best Version Of YOU}; \texttt{Reclaim Your SuperPower}; 
+  \texttt{Awaken Galatic Ascensions} et \texttt{Master Your Quantum Self} sont 
+  similaires mais présentent de légère variates. Quell est la pertinence de ses variantes ?
+  Que représente chacun des symboles sur l'image ? Pourquoi les mêmes 
+  symboles sont présentés alors qu'il s'agit de \textit{différents programmes} ?   
+  \begin{figure}[H]
+    \begin{center}
+      \includegraphics[width=0.35\textwidth]{ImagesConfondantes.png}
+    \end{center}
+    \caption{Sélection d'images sur la page principale}
+  \end{figure}
+
+  Pour ceux qui n'y sont pas initié, certaines images parraissent paraissent 
+  cryptiques; les plupart des nouveaux utilisateurs ne pourraient pas 
+  déterminer leur sens ou leur raison d'être. 
+
+  \begin{figure}[H]
+    \begin{center}
+      \includegraphics[width=0.35\textwidth]{ImageConfondantes2.png}
+    \end{center}
+    \caption{Images de symboles cryptiques sur la page principale}
+  \end{figure}
+
+  Par ailleurs, on constate à travers les différentes pages 
+  des choix esthétiques qui ne semblent pas avoir de fonction utiliaire. 
+  Par exemple, certains liens sont soulignés et d'autres ne le sont pas; 
+  certains liens ont une couleur bleu foncée, d'autres ont une couleur bleu pâle; 
+  certaines portions de texte sont surligné avec un couleur jeune, d'autres ne le sont pas; 
+  certaines informations sont encadré (sans qu'elles semblent avoir une importance 
+  particulières) et certaines informatioin qui semblent importante sont présentées 
+  directement sur la page; différentes taille de police de caractère sont utilisées 
+  alors qu'aucune  attention n'est porté quant à la hiérarchie 
+  ou l'importance relative des éléments. Ainsi, 
+  Les images cryptiques et les choix de \textbf{design inconsistants}
+  exigent que les utilisateurs
+  dépensent plus d'effort pour comprendre le contenu, ce qui n'est pas 
+  idéal pour une \textbf{reconnaissance} facile. Et il va 
+  sans dire que  l'incohérence dans le style des liens, la couleur du texte, 
+  et les surlignages peut dérouter les utilisateurs, 
+  enfreignant ce principe de conception.
+
+  \begin{itemize}
+    \item [$\rhd$ ] \textbf{Défauts de présentation du contenu}  
+      \begin{itemize}
+        \item [$\blacktriangleright$ ] $\mathbb{U}$tilié des différents éléments 
+        \item [$\blacktriangleright$ ] $\mathbb{D}$esign esthétique et minimaliste 
+        \item [$\blacktriangleright$ ] $\mathbb{P}$révention d'erreurs lacunaire
+        \item [$\blacktriangleright$ ] $\mathbb{C}$ohérences et normes
+      \end{itemize}
+  \end{itemize}
+
+
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
